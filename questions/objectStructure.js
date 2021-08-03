@@ -36,7 +36,23 @@
 // When no input is passed, the code should return an Error
 // new Error("Invalid Input")
 
+function myError(message){
+  const error=new Error(message);
+  return error;
+}
+
 const getObjectStructure = (obj) => {
+        if(!obj){
+          throw myError("Invalid Input");
+        }
+        for(value in obj){
+          if(typeof obj[value]!=="object"){
+            obj[value]=typeof obj[value]
+          }
+        }
+       
+        return obj;
+        
   // write code here
 };
 
